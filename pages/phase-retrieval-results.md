@@ -12,7 +12,7 @@ y_j approx cal(A)_(z_j)(x) = abs(cal(B)_(z_j) x)^2
 $$
 
 - Four measured holograms, **2048 × 1920** pixels at native sampling.
-- **Convergence:** projected-gradient ratio $<= 10^(-3)$; AP phase updates $<= 10^(-5)$.
+- **Convergence:** projected-gradient ratio $<= 10^(-3)$; alternating projections (AP) phase updates $<= 10^(-5)$.
 - Constrained runs use **nonpositive phase**, with no support mask:
 
 $$
@@ -27,7 +27,7 @@ quad hat(y)_j = cal(A)_(z_j)(x)
 $$
 
 $bold(y)$: measured intensities; $hat(bold(y))$: nonlinear Fresnel predictions.
-Norms use the **full field** and each method's measured distances, including on ROI slides.
+Scores use the **full field** and each method's measured distances, even on region-of-interest (ROI) slides.
 The denominator measures contrast around the flat field $1$; this is **not phase error**.
 
 <!--
@@ -79,15 +79,17 @@ layout: section
 level: 1
 ---
 
-# Direct inversion
+# Direct phase retrieval
+
+Recover phase by Fourier filtering under an approximate intensity model.
 
 ---
 level: 2
 ---
 
-# Does this acquisition satisfy TIE?
+# Is small-defocus phase retrieval valid here?
 
-TIE needs **small propagation at the retained spatial scales**: $chi_j << 1$.
+Finite-distance inversion with the **transport of intensity equation (TIE)** requires $chi_j << 1$ at the retained spatial scales.
 
 $$
 chi_j (q) = pi lambda z_j q^2, quad
@@ -124,7 +126,7 @@ Dataset and geometry: https://arxiv.org/html/2205.01099v2
 level: 3
 ---
 
-# TIE · small-defocus direct inversion
+# TIE: recover phase from one hologram
 
 Use the **first hologram**, with the same pure-phase model as the notebook.
 
@@ -196,9 +198,9 @@ full-field reconstruction. All limits match the preceding full-field view.
 level: 2
 ---
 
-# CTF · retain the Fresnel oscillations
+# CTF: phase retrieval with regularization
 
-The **pure-phase CTF** uses weak phase increments, without the small-$chi$ approximation.
+The **contrast transfer function (CTF)** model uses weak phase increments while retaining the Fresnel oscillations. Here, absorption is zero.
 
 $$
 h_1 (q) = 2 sin(chi_1 (q)), quad
@@ -246,7 +248,9 @@ title: Single-distance CTF without and with regularization — tight ROI
 level: 2
 ---
 
-# CTF versus ICT · same material prior
+# CTF vs ICT: compare attenuation models
+
+**Intensity contrast transfer (ICT)** retains exponential attenuation; compare with single-material CTF.
 
 For polystyrene at 8 keV, tabulated optical constants give $gamma = delta/beta approx 721$.
 
@@ -262,7 +266,7 @@ hat(phi)_"CTF" = u_alpha, quad
 hat(phi)_"ICT" = gamma/2 ln lr((1 + 2 u_alpha/gamma))
 $$
 
-Same first hologram, $gamma$, and $alpha=10^(-2)$; **ICT keeps exponential attenuation**.
+Same first hologram, material ratio $gamma$, and regularization $alpha=10^(-2)$.
 
 Both still require weak phase increments. The estimated intensity loss through one 15 μm sphere is only **about 0.6%**.
 
@@ -309,6 +313,8 @@ level: 1
 
 # Multiple distances
 
+Combine holograms whose contrast transfer functions have different zeros.
+
 ---
 level: 2
 ---
@@ -324,7 +330,7 @@ sum_(j=1)^J abs(h_j (q))^2 = 0
 quad arrow.l.r quad h_j (q) = 0 quad "for every" j
 $$
 
-**Extra distances fill individual gaps.** Pure-phase DC stays invisible; small combined responses still need regularization.
+**Extra distances fill individual gaps.** The mean phase (DC) stays invisible; small combined responses still need regularization.
 
 ICT also has oscillatory zeros; its material prior supplies a nonzero DC response.
 
@@ -348,9 +354,9 @@ not apply after a finite, known phase-to-attenuation ratio is imposed.
 level: 2
 ---
 
-# CTF · combine all four distances
+# CTF: one distance versus four
 
-Compare **one / four distances** and **no / scalar regularization**.
+Compare pure-phase Fourier inversions using **one or four holograms**, each **without or with scalar Tikhonov regularization**.
 
 $$
 h_j (xi) = 2 sin(norm(xi)^2 / (4 pi F_j)), quad
@@ -410,15 +416,21 @@ layout: section
 level: 1
 ---
 
-# Nonlinear phase retrieval
+# Fitting the nonlinear Fresnel model
+
+Iteratively recover a pure-phase object from measured intensities.
+
+Compare the model and phase constraint, then the distance count, solver, and regularization.
 
 ---
 level: 2
 ---
 
-# Nonlinear single-distance retrieval
+# One hologram: CTF vs gradient descent
 
-Compare **linear CTF → nonlinear free → nonlinear nonpositive phase**.
+Recover phase $phi$ from one hologram using **projected gradient descent (PGD)** and the full Fresnel model.
+
+**Compare:** linear CTF → unconstrained gradient descent → PGD with $phi <= 0$.
 
 $$
 hat(phi) in limits("argmin")_(phi in cal(C)) f_1 (phi), quad
@@ -429,7 +441,7 @@ $$
 phi_(k+1) = Pi_cal(C) (phi_k - eta nabla f_1 (phi_k)), quad phi_0 = 0
 $$
 
-Free: $cal(C) = RR^(H times W)$. Constrained: $cal(C) = {phi : phi <= 0}$.
+Unconstrained: $cal(C) = RR^(H times W)$. Nonpositive phase: $cal(C) = {phi : phi <= 0}$.
 
 Same measured plane; no regularization. Fixed step $eta = 0.2$, run to convergence.
 
@@ -480,9 +492,9 @@ title: Single-distance PGD convergence
 level: 2
 ---
 
-# One versus four distances
+# PGD: one distance versus four
 
-Same nonlinear model, nonpositive phase, zero start, and fixed PGD step.
+**Change only the data:** fit one or four holograms with the same nonlinear model and projected-gradient solver.
 
 $$
 hat(phi) in limits("argmin")_(phi <= 0) f_J (phi), quad
@@ -492,6 +504,8 @@ $$
 $$
 phi_(k+1) = Pi_cal(C) (phi_k - eta nabla f_J (phi_k)), quad J in {1, 4}
 $$
+
+Both use nonpositive phase, zero initialization, and fixed step $eta = 0.2$.
 
 Averaging over distances keeps the data-gradient scaling comparable.
 
@@ -542,9 +556,11 @@ title: One versus four distances — convergence
 level: 2
 ---
 
-# Averaged AP versus PGD
+# Four distances: projections vs gradients
 
-Four distances, nonpositive phase, zero start; both methods run to convergence.
+Compare **alternating projections (AP)** with **projected gradient descent (PGD)**.
+
+Same four holograms, nonpositive phase, and zero start; both run to convergence.
 
 $$
 u_(j,k) = cal(B)_(z_j) e^(i phi_k), quad
@@ -559,7 +575,7 @@ $$
 
 PGD: $phi_(k+1) = Pi_cal(C) (phi_k - eta nabla f_J (phi_k))$.
 
-AP replaces detector amplitudes, averages back-propagated fields, and tracks phase continuously.
+AP imposes measured detector amplitudes and averages back-propagated fields; PGD minimizes intensity mismatch.
 
 <!--
 Notebook stage 4. cal(B)_(z_j)^* is adjoint Fresnel propagation.
@@ -619,9 +635,11 @@ title: AP versus PGD — propagation work
 level: 2
 ---
 
-# Nonlinear Tikhonov · Huhn et al.
+# From PGD to nonlinear Tikhonov
 
-Add **CTF initialization → frequency regularization → adaptive steps**.
+**Nonlinear Tikhonov (NLTikh)**, following Huhn et al.: four holograms and nonpositive phase.
+
+**Add in sequence:** CTF initialization → frequency regularization → adaptive steps.
 
 $$
 hat(phi) in limits("argmin")_(phi <= 0) lr([
@@ -639,7 +657,7 @@ $$
 
 $cal(A)_(z_j)^"lin" (phi) = 1 + cal(F)^(-1)[h_j cal(F) phi]$ linearizes $cal(A)_(z_j)(e^(i phi))$ at $phi=0$.
 
-Frequency weights $alpha(xi)$; projected steps with Barzilai–Borwein proposals and nonmonotone backtracking.
+Frequency weights $alpha(xi)$; projected steps with **Barzilai–Borwein (BB)** step-size proposals and nonmonotone backtracking.
 
 <!--
 Notebook stage 5, following Huhn et al. (2022), Eqs. (6), (7), and (11).
@@ -725,7 +743,7 @@ This is a crop of the reconstructed phase, not an independent ROI reconstruction
 level: 2
 ---
 
-# Full reconstruction · method recap
+# Nonlinear Tikhonov: complete method
 
 **Huhn-style nonlinear Tikhonov**, using all four measured holograms at native resolution.
 
@@ -737,7 +755,7 @@ hat(phi) in limits("argmin")_(phi <= 0) lr([
 $$
 
 - **Model:** nonlinear Fresnel propagation of a pure-phase object, $x = e^(i phi)$.
-- **Initialization:** constrained CTF, converged after 350 accelerated ADMM iterations.
+- **Initialization:** constrained CTF via the **alternating direction method of multipliers (ADMM)**, converged after 350 accelerated iterations.
 - **Prior:** nonpositive phase and frequency-dependent Tikhonov regularization.
 - **Optimization:** projected gradient, alternating Barzilai–Borwein steps, and nonmonotone backtracking.
 
@@ -757,7 +775,7 @@ level: 2
 class: text-sm
 ---
 
-# TL;DR · CTF vs nonlinear retrieval
+# CTF vs nonlinear Tikhonov: results
 
 Same **four holograms**, full field and sphere ROI · one shared phase color scale.
 
