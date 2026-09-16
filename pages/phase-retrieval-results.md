@@ -385,7 +385,7 @@ title: CTF phase reconstructions
 <!--
 All four CTF reconstructions are closed-form inversions. The displayed residuals
 now use the same nonlinear intensity diagnostic as later stages: 2.2902, 0.8141,
-0.6043, and 0.5588. Linear CTF conditioning is shown separately on the next plot.
+0.6043, and 0.5588.
 -->
 
 ---
@@ -404,14 +404,6 @@ The native phase arrays use the notebook's model and
 cropped after reconstructing the full 2048 × 1920 field.
 All panels use one shared phase scale, matching the preceding full-field view.
 -->
-
----
-layout: none
-level: 3
-title: CTF conditioning across distances
----
-
-<img src="/phase-retrieval/01-ctf-conditioning.png" alt="Radial mean of the squared CTF transfer functions for one and four distances, showing the conditioning of the direct inverse." class="absolute inset-0 w-full h-full object-contain" />
 
 ---
 layout: section
