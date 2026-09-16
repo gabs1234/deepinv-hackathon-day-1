@@ -1,0 +1,67 @@
+{
+  "source": "scripts/render-direct-methods.py",
+  "kind": "analytic illustration, not experimental reconstruction",
+  "coordinate": "u = q sqrt(lambda z1); q in cycles per length",
+  "distance_ratios": [
+    1.0,
+    1.37
+  ],
+  "ict_delta_over_beta": 10.0,
+  "panels": {
+    "ctf": {
+      "u_range": [
+        0,
+        1.7
+      ],
+      "zero_locations": [
+        [
+          0.0,
+          1.0,
+          1.4142135623730951
+        ],
+        [
+          0.0,
+          0.854357657716761,
+          1.208244186660354,
+          1.4797908710009702
+        ]
+      ]
+    },
+    "tie": {
+      "u_range": [
+        0,
+        0.25
+      ],
+      "zero_locations": [
+        [
+          0.0
+        ],
+        [
+          0.0
+        ]
+      ]
+    },
+    "ict": {
+      "u_range": [
+        0,
+        1.7
+      ],
+      "zero_locations": [
+        [
+          0.9840093915046982,
+          1.4029520599683534
+        ],
+        [
+          0.8406959588972491,
+          1.1986228358434672,
+          1.4719455526291403
+        ]
+      ]
+    }
+  },
+  "sources": [
+    "https://arxiv.org/html/2205.01099v2",
+    "https://doi.org/10.1364/OL.530330",
+    "https://irp.pages.gwdg.de/hotopy/reference/generated/generated/hotopy.holo.ICT.html"
+  ]
+}

@@ -1,0 +1,33 @@
+# Local scientific checkout: the dataset must never enter this repository.
+/multi-distance-phase-retrieval
+*.npz
+*.npy
+*.h5
+*.hdf5
+*.tif
+*.tiff
+*.h5ad
+*.zarr/
+/data/
+/datasets/
+
+# Dependencies, local experiments, and numerical caches
+/node_modules/
+/.slidev/
+/.audit/
+/.cache/
+/.agents/
+/.codex/
+**/__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+!.env.example
+
+# Rebuildable local exports; docs/ is the tracked Pages site.
+/dist/
+/github-pages-export/
+/github-pages-export.zip
+/slides-export.pdf
+.DS_Store

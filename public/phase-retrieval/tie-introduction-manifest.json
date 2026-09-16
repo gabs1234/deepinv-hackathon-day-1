@@ -1,0 +1,208 @@
+{
+  "source_data_sha256": "9c12fc258555a72fa1935962ba462d4891481a2c3ad69e802eea265f50f1cf34",
+  "renderer_sha256": "b0104d787f7ac8f90e8e2354635b1ee123823c0c63bee8eb0c4e39057021a784",
+  "direct_methods_sha256": "0dd4894bdd741624d6280eda573f03fc6807f615ce149230a749d80f362fff2e",
+  "shape": [
+    2048,
+    1920
+  ],
+  "pixel_size_m": 1.96e-07,
+  "wavelength_m": 1.5498e-10,
+  "fresnel_numbers": [
+    0.0015901119563578893,
+    0.0015698136948403146,
+    0.0014937000090143218,
+    0.0013330468780521842
+  ],
+  "effective_distances_m": [
+    0.15588659933472693,
+    0.15790226971063323,
+    0.1659484126278427,
+    0.18594780837738667
+  ],
+  "sampled_axis_nyquist_period_m": 3.92e-07,
+  "sampled_corner_angle_rad": 0.0005591194334096485,
+  "first_position_field_ray_angle_rad": 0.0017635346014746324,
+  "axis_nyquist_chi": [
+    493.9263303172581,
+    500.31297725259105,
+    525.8071625210239,
+    589.1752018091464
+  ],
+  "periods_um": [
+    1.0,
+    5.0,
+    15.0,
+    30.0
+  ],
+  "chi_by_distance_and_period": [
+    [
+      75.89869562187116,
+      3.035947824874847,
+      0.33732753609720517,
+      0.08433188402430129
+    ],
+    [
+      76.88009333654217,
+      3.075203733461687,
+      0.34168930371796524,
+      0.08542232592949131
+    ],
+    [
+      80.79763182163062,
+      3.2319052728652258,
+      0.35910058587391386,
+      0.08977514646847846
+    ],
+    [
+      90.5350182108007,
+      3.6214007284320284,
+      0.4023778587146698,
+      0.10059446467866745
+    ]
+  ],
+  "roi": {
+    "top": 583,
+    "left": 870,
+    "height": 192,
+    "width": 192
+  },
+  "method": "single-distance pure-phase TIE, alpha=0.01, periodic FFT, DC zero",
+  "phase_gauge": "zero mean; no nonpositive constraint",
+  "converged": true,
+  "iterations": 0,
+  "stop": "closed-form inverse",
+  "measurement_preprocessing": "stored values unchanged; no per-image normalization or crop",
+  "nonlinear_intensity_residual": 0.49078133233897747,
+  "residual_definition": "|| |B_z exp(i phi_TIE)|^2 - y_1 ||_2 / ||y_1 - 1||_2",
+  "linear_model_closure_error_excluding_dc": 6.330716272584218e-12,
+  "deepinv_propagation_relative_error": 7.668356704739991e-16,
+  "phase_ground_truth": null,
+  "ict_comparison": {
+    "material": {
+      "delta": 3.672520672234627e-06,
+      "beta": 5.091467780379396e-09,
+      "gamma": 721.3088309008144,
+      "source_file": "data/polystyrene-8kev.json",
+      "source_sha256": "d00a2f48174c778f02f86a4e6117f10f5944a8f38dd084c0f7fbda94f19c605c",
+      "sphere_15um_transmission": 0.9938265992781148
+    },
+    "alpha_phase_scale": 0.01,
+    "regularization": "same ||s||^2 penalty, s = gamma/2 * (I0 - 1); reference intensity = 1",
+    "equivalent_alpha_intensity_scale": 1300.7160738387493,
+    "constraint": "none",
+    "iterations": 0,
+    "converged": true,
+    "contact_intensity_range": [
+      0.9921648040988662,
+      1.0073713215689177
+    ],
+    "ctf_residual": 0.8123998455281825,
+    "ict_residual": 0.8122615037543002,
+    "phase_difference_rms_rad": 0.0010644732242751224,
+    "phase_difference_max_abs_rad": 0.011128507918097164,
+    "residual_model": "|B exp(phi/gamma + i phi)|^2, first distance, stored data unchanged",
+    "note": "A physical tabulated material ratio is introduced for both new methods. Earlier notebook CTF and subsequent nonlinear runs retain their pure-phase model."
+  },
+  "figures": [
+    {
+      "file": "00-tie-full.png",
+      "sha256": "95e95dfbaefb73f6282fa6d4bc024e18e7edcca07525b3eb3c45705b4441c716",
+      "phase_limits_rad": [
+        -1.0161849872931144,
+        1.2218336530579144
+      ],
+      "intensity_limits": [
+        0.28392247438430784,
+        2.401755118370055
+      ],
+      "roi": null
+    },
+    {
+      "file": "01-ctf-single-full.png",
+      "sha256": "b38670c0a31d387278389e90b27034d53fe05ad07e9bd5c31e81564a71fed7a8",
+      "color_limits_rad": [
+        -7.783336415290832,
+        8.160965557098388
+      ],
+      "methods": [
+        "ctf_single",
+        "ctf_single_tikh"
+      ],
+      "roi": null
+    },
+    {
+      "file": "00-tie-roi.png",
+      "sha256": "80ff687c401c7ce94f8c7934a0ddc1aec93f52127aa60e8a48a48b61ed517a39",
+      "phase_limits_rad": [
+        -1.0161849872931144,
+        1.2218336530579144
+      ],
+      "intensity_limits": [
+        0.28392247438430784,
+        2.401755118370055
+      ],
+      "roi": [
+        583,
+        870,
+        192
+      ]
+    },
+    {
+      "file": "01-ctf-single-roi.png",
+      "sha256": "348710ae0095b4194833c51dac492b5a761d8c91a17c13cab432486447f48f0b",
+      "color_limits_rad": [
+        -7.783336415290832,
+        8.160965557098388
+      ],
+      "methods": [
+        "ctf_single",
+        "ctf_single_tikh"
+      ],
+      "roi": [
+        583,
+        870,
+        192
+      ]
+    },
+    {
+      "file": "01-ctf-null-space.svg",
+      "sha256": "25f46d91b17d8ed1aa4f0da6e9e588b2e4e70da2b80425b506d8febcf5c93114",
+      "distance_indices": [
+        1,
+        4
+      ],
+      "actual_distance_ratio": 1.1928402388078974
+    },
+    {
+      "file": "01-ctf-ict-full.png",
+      "sha256": "f80acb305612190ea4101c942ef936d3273b28c775599989c14e1a95ff35dbb4",
+      "phase_limits_rad": [
+        -1.5115504019705626,
+        1.5196176677611186
+      ],
+      "difference_limits_rad": [
+        -0.011128507918097164,
+        0.011128507918097164
+      ],
+      "roi": null
+    },
+    {
+      "file": "01-ctf-ict-roi.png",
+      "sha256": "ca191b696a422215f0cf760cea9520a7319124201e7ec9071aacab654f1276e4",
+      "phase_limits_rad": [
+        -1.5115504019705626,
+        1.5196176677611186
+      ],
+      "difference_limits_rad": [
+        -0.011128507918097164,
+        0.011128507918097164
+      ],
+      "roi": [
+        583,
+        870,
+        192
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "repository": "https://github.com/GZGavinZhao/slidev.git",
+  "commit": "7413b281cfa7e1a99b80efdb713db9247694380b",
+  "reason": "Pinned fork providing the native Typst math renderer used by this presentation."
+}

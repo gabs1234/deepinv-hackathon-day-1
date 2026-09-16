@@ -1,0 +1,27 @@
+{
+  "name": "deepinv-hackathon-day-1",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "build:pages": "node scripts/build-github-pages.mjs",
+    "dev": "slidev --open",
+    "export": "slidev export",
+    "setup": "node scripts/setup-slidev.mjs",
+    "check:publish": "node scripts/check-publish-files.mjs",
+    "figures:record": "node scripts/record-figure-provenance.mjs"
+  },
+  "dependencies": {
+    "@myriaddreamin/typst-ts-node-compiler": "0.8.0-rc2",
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest",
+    "vue": "latest"
+  },
+  "devDependencies": {
+    "@slidev/cli": "link:.slidev/packages/slidev"
+  },
+  "packageManager": "pnpm@11.20.0",
+  "engines": {
+    "node": ">=22.15.0"
+  }
+}
