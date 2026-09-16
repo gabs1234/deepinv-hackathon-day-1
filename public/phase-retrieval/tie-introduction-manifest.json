@@ -1,6 +1,6 @@
 {
   "source_data_sha256": "9c12fc258555a72fa1935962ba462d4891481a2c3ad69e802eea265f50f1cf34",
-  "renderer_sha256": "b0104d787f7ac8f90e8e2354635b1ee123823c0c63bee8eb0c4e39057021a784",
+  "renderer_sha256": "339815edc38e4b026eccee6160a451b6c699d2af31897be1985c732ca2eafa8b",
   "direct_methods_sha256": "0dd4894bdd741624d6280eda573f03fc6807f615ce149230a749d80f362fff2e",
   "shape": [
     2048,
@@ -107,7 +107,7 @@
   "figures": [
     {
       "file": "00-tie-full.png",
-      "sha256": "95e95dfbaefb73f6282fa6d4bc024e18e7edcca07525b3eb3c45705b4441c716",
+      "sha256": "05033b6fbdac2b7cfc1dbc934adf6744bd018c2590d6d068986cdfef0b1b8723",
       "phase_limits_rad": [
         -1.0161849872931144,
         1.2218336530579144
@@ -116,11 +116,14 @@
         0.28392247438430784,
         2.401755118370055
       ],
-      "roi": null
+      "roi": null,
+      "error_metric": "r_I = ||predicted intensity - measured intensity||_2 / ||measured intensity - 1||_2",
+      "error_domain": "Full measured field, first distance",
+      "error_value": 0.49078133233897747
     },
     {
       "file": "01-ctf-single-full.png",
-      "sha256": "b38670c0a31d387278389e90b27034d53fe05ad07e9bd5c31e81564a71fed7a8",
+      "sha256": "3df8a2ea6d238632c90673631c0a0e01019ffc082785c33cae39c0ddeffcbb2a",
       "color_limits_rad": [
         -7.783336415290832,
         8.160965557098388
@@ -129,11 +132,17 @@
         "ctf_single",
         "ctf_single_tikh"
       ],
-      "roi": null
+      "roi": null,
+      "error_metric": "r_I = ||predicted intensity - measured intensity||_2 / ||measured intensity - 1||_2",
+      "error_domain": "Full measured field, first distance",
+      "error_values": {
+        "ctf_single": 2.2901952266693115,
+        "ctf_single_tikh": 0.8140570521354675
+      }
     },
     {
       "file": "00-tie-roi.png",
-      "sha256": "80ff687c401c7ce94f8c7934a0ddc1aec93f52127aa60e8a48a48b61ed517a39",
+      "sha256": "368e7fd517a4b5eb8713ea13d63d442de520e7e3dd78cf524694d3f6d2447a0e",
       "phase_limits_rad": [
         -1.0161849872931144,
         1.2218336530579144
@@ -146,11 +155,14 @@
         583,
         870,
         192
-      ]
+      ],
+      "error_metric": "r_I = ||predicted intensity - measured intensity||_2 / ||measured intensity - 1||_2",
+      "error_domain": "Full measured field, first distance",
+      "error_value": 0.49078133233897747
     },
     {
       "file": "01-ctf-single-roi.png",
-      "sha256": "348710ae0095b4194833c51dac492b5a761d8c91a17c13cab432486447f48f0b",
+      "sha256": "d1a070711fff7f8f44bb3207dd584cf4c90e2011ee1fc0a1f6fb2577749e5da8",
       "color_limits_rad": [
         -7.783336415290832,
         8.160965557098388
@@ -163,7 +175,13 @@
         583,
         870,
         192
-      ]
+      ],
+      "error_metric": "r_I = ||predicted intensity - measured intensity||_2 / ||measured intensity - 1||_2",
+      "error_domain": "Full measured field, first distance",
+      "error_values": {
+        "ctf_single": 2.2901952266693115,
+        "ctf_single_tikh": 0.8140570521354675
+      }
     },
     {
       "file": "01-ctf-null-space.svg",
@@ -176,7 +194,7 @@
     },
     {
       "file": "01-ctf-ict-full.png",
-      "sha256": "f80acb305612190ea4101c942ef936d3273b28c775599989c14e1a95ff35dbb4",
+      "sha256": "26d3c541eaa9592ac13dae2b3f9565de55452d3f8fea8045b7ec45bd03f870a1",
       "phase_limits_rad": [
         -1.5115504019705626,
         1.5196176677611186
@@ -185,11 +203,17 @@
         -0.011128507918097164,
         0.011128507918097164
       ],
-      "roi": null
+      "roi": null,
+      "error_metric": "r_I = ||predicted intensity - measured intensity||_2 / ||measured intensity - 1||_2",
+      "error_domain": "Full measured field, first distance",
+      "error_values": {
+        "ctf": 0.8123998455281825,
+        "ict": 0.8122615037543002
+      }
     },
     {
       "file": "01-ctf-ict-roi.png",
-      "sha256": "ca191b696a422215f0cf760cea9520a7319124201e7ec9071aacab654f1276e4",
+      "sha256": "9a280bb1a9aac16381080535059485f79620cccb32108119a5ee436997390e67",
       "phase_limits_rad": [
         -1.5115504019705626,
         1.5196176677611186
@@ -202,7 +226,13 @@
         583,
         870,
         192
-      ]
+      ],
+      "error_metric": "r_I = ||predicted intensity - measured intensity||_2 / ||measured intensity - 1||_2",
+      "error_domain": "Full measured field, first distance",
+      "error_values": {
+        "ctf": 0.8123998455281825,
+        "ict": 0.8122615037543002
+      }
     }
   ]
 }

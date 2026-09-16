@@ -1,7 +1,7 @@
 {
   "file": "06-ctf-vs-nltikh-summary.png",
-  "sha256": "80e899ee1f788ed8d3d7ddf627434153cc3089aa3dc1b7200f5bd8290bacd298",
-  "renderer_sha256": "b007c0e8355fc551e198557ae9824455c534ad33010f4b5362cf8f8cb254daec",
+  "sha256": "596c63c97ea6e7d20ce7d00da5693bc079098e53b1fed3ecf39afa0c04a2720a",
+  "renderer_sha256": "89cf348563443a9e667682a6dc0eef2d13f8c9365ee2f17d483f839180249c01",
   "source_hashes": {
     "multi-distance-phase-retrieval/holograms_beads_updated.npz": "9c12fc258555a72fa1935962ba462d4891481a2c3ad69e802eea265f50f1cf34",
     "multi-distance-phase-retrieval/phase_retrieval_comparison.py": "97701acfd99f0406de9559036a6828f74c86f31c0d21b8d7b6c6ea2d4b6a7ffe",
@@ -39,6 +39,8 @@
     "ctf_multi_tikh": 0.5587598085403442,
     "nltikh": 0.12844941020011902
   },
+  "error_metric": "r_I = ||predicted intensity - measured intensity||_2 / ||measured intensity - 1||_2",
+  "error_domain": "Full measured field, all four distances; ROI is a display crop only",
   "residual_ratio_ctf_over_nltikh": 4.350037946221932,
   "residual_definition": "|| |P exp(i phi)|^2 - I ||_2 / ||I - 1||_2, same four planes",
   "phase_ground_truth": null,

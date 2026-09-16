@@ -94415,6 +94415,20 @@
         "ctf_multi_tikh"
       ],
       "colormap": "magma",
+      "error_metric": "r_I = ||predicted intensity - measured intensity||_2 / ||measured intensity - 1||_2",
+      "error_domain": "Full measured field; ROI is a display crop only",
+      "error_planes": {
+        "ctf_single": 1,
+        "ctf_single_tikh": 1,
+        "ctf_multi": 4,
+        "ctf_multi_tikh": 4
+      },
+      "error_values": {
+        "ctf_single": 2.2901952266693115,
+        "ctf_single_tikh": 0.8140570521354675,
+        "ctf_multi": 0.6043079495429993,
+        "ctf_multi_tikh": 0.5587598085403442
+      },
       "color_limits_rad_by_method": {
         "ctf_single": [
           -6.75977852344513,
@@ -94441,7 +94455,7 @@
         -6.75977852344513,
         6.978757085800154
       ],
-      "sha256": "07a1c42d1e8248b1f9725cde1d9e20db4be435f2d912707b9a424913a3efcb14",
+      "sha256": "c459fff64808ffbb1580d05bc5655b22c7fc4b0c9f86ba4c339a27041f9d1b9a",
       "width": 2300,
       "height": 1200
     },
@@ -94453,6 +94467,18 @@
         "pgd_single"
       ],
       "colormap": "magma",
+      "error_metric": "r_I = ||predicted intensity - measured intensity||_2 / ||measured intensity - 1||_2",
+      "error_domain": "Full measured field; ROI is a display crop only",
+      "error_planes": {
+        "ctf_single": 1,
+        "pgd_free": 1,
+        "pgd_single": 1
+      },
+      "error_values": {
+        "ctf_single": 2.2901952266693115,
+        "pgd_free": 0.03786877915263176,
+        "pgd_single": 0.03885006159543991
+      },
       "color_limits_rad_by_method": {
         "ctf_single": [
           -8.704656648635865,
@@ -94475,7 +94501,7 @@
         -8.704656648635865,
         9.217337923049929
       ],
-      "sha256": "9bce8bd81f36cac02ded7b2832d0f11c3541f0fc908a46fe0554b1da848598ff",
+      "sha256": "665cd6841563310ef98782d43606e0c8c0500657083f03d3d3cc89b352baef3b",
       "width": 2300,
       "height": 1200
     },
@@ -94486,6 +94512,16 @@
         "pgd_multi"
       ],
       "colormap": "magma",
+      "error_metric": "r_I = ||predicted intensity - measured intensity||_2 / ||measured intensity - 1||_2",
+      "error_domain": "Full measured field; ROI is a display crop only",
+      "error_planes": {
+        "pgd_single": 1,
+        "pgd_multi": 4
+      },
+      "error_values": {
+        "pgd_single": 0.03885006159543991,
+        "pgd_multi": 0.13011610507965088
+      },
       "color_limits_rad_by_method": {
         "pgd_single": [
           -5.0,
@@ -94504,7 +94540,7 @@
         -5.0,
         4.0
       ],
-      "sha256": "f694abd663c5cd26aff461f68f5e400e10eede81f4b75f94de2df8e2a73de89d",
+      "sha256": "3abc3fb56024b003257e7859db9d94d274c3daaf6463c958c5fd95af07950810",
       "width": 2300,
       "height": 1200
     },
@@ -94515,6 +94551,16 @@
         "ap"
       ],
       "colormap": "magma",
+      "error_metric": "r_I = ||predicted intensity - measured intensity||_2 / ||measured intensity - 1||_2",
+      "error_domain": "Full measured field; ROI is a display crop only",
+      "error_planes": {
+        "pgd_multi": 4,
+        "ap": 4
+      },
+      "error_values": {
+        "pgd_multi": 0.13011610507965088,
+        "ap": 0.1343432068824768
+      },
       "color_limits_rad_by_method": {
         "pgd_multi": [
           -5.0,
@@ -94533,7 +94579,7 @@
         -5.0,
         4.0
       ],
-      "sha256": "da99ee0fd6418e8c3c03f8f4dc323c4109db190a4c77d4cbd84bea2ca8160966",
+      "sha256": "9608195d5a85179a41d82b010e25a638abd4cff0abe6dd6a279e4a72ef0c2eb9",
       "width": 2300,
       "height": 1200
     },
@@ -94546,6 +94592,20 @@
         "nltikh"
       ],
       "colormap": "magma",
+      "error_metric": "r_I = ||predicted intensity - measured intensity||_2 / ||measured intensity - 1||_2",
+      "error_domain": "Full measured field; ROI is a display crop only",
+      "error_planes": {
+        "pgd_multi": 4,
+        "pgd_warm": 4,
+        "pgd_tikh": 4,
+        "nltikh": 4
+      },
+      "error_values": {
+        "pgd_multi": 0.13011610507965088,
+        "pgd_warm": 0.1282799392938614,
+        "pgd_tikh": 0.12855295836925507,
+        "nltikh": 0.12844941020011902
+      },
       "color_limits_rad_by_method": {
         "pgd_multi": [
           -5.0,
@@ -94572,7 +94632,7 @@
         -5.0,
         4.0
       ],
-      "sha256": "4e10c4de524f588745eb7c5e687211044e610cd503cc1da743a00e23ba5408e5",
+      "sha256": "0058aae83d8b7feb9762c0d85f16557ce096064549eec880e6876f8e2b7728d1",
       "width": 2300,
       "height": 1200
     },
@@ -94592,6 +94652,14 @@
       "methods": [
         "nltikh"
       ],
+      "error_metric": "r_I = ||predicted intensity - measured intensity||_2 / ||measured intensity - 1||_2",
+      "error_domain": "Full measured field; ROI is a display crop only",
+      "error_planes": {
+        "nltikh": 4
+      },
+      "error_values": {
+        "nltikh": 0.12844941020011902
+      },
       "colormap": "magma",
       "color_limits_rad": [
         -5.0,
@@ -94607,7 +94675,7 @@
           4.0
         ]
       },
-      "sha256": "b905eceafda3aa1847ec6f7104e4c19693d6c6a754c7c3ff7ae2a684ae33c49f",
+      "sha256": "22138459130370f4451047d4dd61155d05ce316d6206608e9f82a747cb221f70",
       "width": 2300,
       "height": 1200
     },
@@ -94620,6 +94688,20 @@
         "ctf_multi_tikh"
       ],
       "colormap": "magma",
+      "error_metric": "r_I = ||predicted intensity - measured intensity||_2 / ||measured intensity - 1||_2",
+      "error_domain": "Full measured field; ROI is a display crop only",
+      "error_planes": {
+        "ctf_single": 1,
+        "ctf_single_tikh": 1,
+        "ctf_multi": 4,
+        "ctf_multi_tikh": 4
+      },
+      "error_values": {
+        "ctf_single": 2.2901952266693115,
+        "ctf_single_tikh": 0.8140570521354675,
+        "ctf_multi": 0.6043079495429993,
+        "ctf_multi_tikh": 0.5587598085403442
+      },
       "color_limits_rad_by_method": {
         "ctf_single": [
           -6.75977852344513,
@@ -94646,7 +94728,7 @@
         -6.75977852344513,
         6.978757085800154
       ],
-      "sha256": "245bc528f8986bd8f2f5f73b5f51d498c18242dea5f69eebd918b0965757a9c5",
+      "sha256": "d93f2865ecfa9c7e58c15f99d1e30edb360e0e1876510185154bc6f2318ef77d",
       "width": 2300,
       "height": 1200
     },
@@ -94658,6 +94740,18 @@
         "pgd_single"
       ],
       "colormap": "magma",
+      "error_metric": "r_I = ||predicted intensity - measured intensity||_2 / ||measured intensity - 1||_2",
+      "error_domain": "Full measured field; ROI is a display crop only",
+      "error_planes": {
+        "ctf_single": 1,
+        "pgd_free": 1,
+        "pgd_single": 1
+      },
+      "error_values": {
+        "ctf_single": 2.2901952266693115,
+        "pgd_free": 0.03786877915263176,
+        "pgd_single": 0.03885006159543991
+      },
       "color_limits_rad_by_method": {
         "ctf_single": [
           -8.704656648635865,
@@ -94680,7 +94774,7 @@
         -8.704656648635865,
         9.217337923049929
       ],
-      "sha256": "a6c25c11c1eab58c3e4c67ec1f1d7e57c34831a58eac490fdc3c6f7fd814ccb8",
+      "sha256": "f7b0da939fac8a64a7498db6b58d48a84be5bded7bd840ec80cb30aa2ec1adf8",
       "width": 2300,
       "height": 1200
     },
@@ -94691,6 +94785,16 @@
         "pgd_multi"
       ],
       "colormap": "magma",
+      "error_metric": "r_I = ||predicted intensity - measured intensity||_2 / ||measured intensity - 1||_2",
+      "error_domain": "Full measured field; ROI is a display crop only",
+      "error_planes": {
+        "pgd_single": 1,
+        "pgd_multi": 4
+      },
+      "error_values": {
+        "pgd_single": 0.03885006159543991,
+        "pgd_multi": 0.13011610507965088
+      },
       "color_limits_rad_by_method": {
         "pgd_single": [
           -5.0,
@@ -94709,7 +94813,7 @@
         -5.0,
         4.0
       ],
-      "sha256": "913859d15ab61f9b099254248df5456d5a87cbd3facbd88b4eb92ffee16fafba",
+      "sha256": "f1b542692d870111624cda111dae1a7b38a6c4f643647703475d335a6d3d0447",
       "width": 2300,
       "height": 1200
     },
@@ -94720,6 +94824,16 @@
         "ap"
       ],
       "colormap": "magma",
+      "error_metric": "r_I = ||predicted intensity - measured intensity||_2 / ||measured intensity - 1||_2",
+      "error_domain": "Full measured field; ROI is a display crop only",
+      "error_planes": {
+        "pgd_multi": 4,
+        "ap": 4
+      },
+      "error_values": {
+        "pgd_multi": 0.13011610507965088,
+        "ap": 0.1343432068824768
+      },
       "color_limits_rad_by_method": {
         "pgd_multi": [
           -5.0,
@@ -94738,7 +94852,7 @@
         -5.0,
         4.0
       ],
-      "sha256": "b2d7a3100525b86cea34381dde4b9d980a5278ff0a3e5ea92fd7c999b69fb5c0",
+      "sha256": "82497c0b4c49b535781d4a651550bd6b80af6c61de9fd2b078bd9602ca64cbb9",
       "width": 2300,
       "height": 1200
     },
@@ -94751,6 +94865,20 @@
         "nltikh"
       ],
       "colormap": "magma",
+      "error_metric": "r_I = ||predicted intensity - measured intensity||_2 / ||measured intensity - 1||_2",
+      "error_domain": "Full measured field; ROI is a display crop only",
+      "error_planes": {
+        "pgd_multi": 4,
+        "pgd_warm": 4,
+        "pgd_tikh": 4,
+        "nltikh": 4
+      },
+      "error_values": {
+        "pgd_multi": 0.13011610507965088,
+        "pgd_warm": 0.1282799392938614,
+        "pgd_tikh": 0.12855295836925507,
+        "nltikh": 0.12844941020011902
+      },
       "color_limits_rad_by_method": {
         "pgd_multi": [
           -5.0,
@@ -94777,7 +94905,7 @@
         -5.0,
         4.0
       ],
-      "sha256": "95dd869d0660495a947eb290de049a149091f6587094700dc2b04cf50b08176f",
+      "sha256": "9525763b2acc5e38bb00d72434f9c1fee6f1b4e7f26066601f5220b70a800ccb",
       "width": 2300,
       "height": 1200
     },
@@ -94788,7 +94916,9 @@
         "pgd_single"
       ],
       "x": "iterations",
-      "sha256": "678c3650b27478e1f0fa1c3e3adbcc12b7b872226bace55f1ec8457faa39092a",
+      "error_metric": "r_I = ||predicted intensity - measured intensity||_2 / ||measured intensity - 1||_2",
+      "error_domain": "Full measured field, using each method's own distances",
+      "sha256": "169a939a294a6c17b015745cc1bf087880dc1ff52d0e5f76117253b57a905e39",
       "width": 2300,
       "height": 1200
     },
@@ -94799,7 +94929,9 @@
         "pgd_multi"
       ],
       "x": "iterations",
-      "sha256": "e5551549b0d6776cfaab7b91065f4c007d09a96a0f93ef1027a4051bff377c48",
+      "error_metric": "r_I = ||predicted intensity - measured intensity||_2 / ||measured intensity - 1||_2",
+      "error_domain": "Full measured field, using each method's own distances",
+      "sha256": "34c8fefa214330f734531a5ad2f728522fdff68d54ef3cccbfc9f6b7a968c70e",
       "width": 2300,
       "height": 1200
     },
@@ -94810,7 +94942,9 @@
         "ap"
       ],
       "x": "iterations",
-      "sha256": "5e2edfb8ac8d47695b61d7fd617a341bb4287fe1af38de8f3c561b1a640a199e",
+      "error_metric": "r_I = ||predicted intensity - measured intensity||_2 / ||measured intensity - 1||_2",
+      "error_domain": "Full measured field, using each method's own distances",
+      "sha256": "68767a535434934625c2744d99eaec62677efe8975068cbc813742198ab26697",
       "width": 2300,
       "height": 1200
     },
@@ -94821,7 +94955,9 @@
         "ap"
       ],
       "x": "propagation work",
-      "sha256": "5d8fea4db69cb0c93005fee59ef4fbfa17a8b4be8b1c2ec617e915b1b4f69a81",
+      "error_metric": "r_I = ||predicted intensity - measured intensity||_2 / ||measured intensity - 1||_2",
+      "error_domain": "Full measured field, using each method's own distances",
+      "sha256": "d987f8c99d1f282a86d1ce88d35c36245ddfcd615ac0af8622fdbec434e81533",
       "width": 2300,
       "height": 1200
     },
@@ -94834,7 +94970,9 @@
         "nltikh"
       ],
       "x": "propagation work",
-      "sha256": "8b70e73b9a4ca117b3cf98e96230f5fa183228d192ed7d2e394f01271f19d8f8",
+      "error_metric": "r_I = ||predicted intensity - measured intensity||_2 / ||measured intensity - 1||_2",
+      "error_domain": "Full measured field, using each method's own distances",
+      "sha256": "30228536fe137e5476231e30788c223a7f1aea69ad500a8add84d249802dd97c",
       "width": 2300,
       "height": 1200
     },
@@ -94864,6 +95002,14 @@
       "methods": [
         "nltikh"
       ],
+      "error_metric": "r_I = ||predicted intensity - measured intensity||_2 / ||measured intensity - 1||_2",
+      "error_domain": "Full measured field; ROI is a display crop only",
+      "error_planes": {
+        "nltikh": 4
+      },
+      "error_values": {
+        "nltikh": 0.12844941020011902
+      },
       "colormap": "magma",
       "color_limits_rad": [
         -5.0,
@@ -94880,11 +95026,11 @@
         ]
       },
       "alias_of": "05-full-field-paper-roi.png",
-      "sha256": "b905eceafda3aa1847ec6f7104e4c19693d6c6a754c7c3ff7ae2a684ae33c49f",
+      "sha256": "22138459130370f4451047d4dd61155d05ce316d6206608e9f82a747cb221f70",
       "width": 2300,
       "height": 1200
     }
   ],
-  "renderer_sha256": "5bae2607d5bfbb2d31bd43f24ff1c8e9dc471e1ba219e7da7c689608a22709ce",
-  "details_renderer_sha256": "be44276d1b749b466fd071edb5115b4247512f7483e93c485c3fbecec3176621"
+  "renderer_sha256": "d3cc8963adc4ed7d527a4c52d9bf767c36567e0c6d684b57e979c94685881f66",
+  "details_renderer_sha256": "eaea377bbfa4dddaf1c3c371ffde1c7cdb8bc71348d39013438c53e6f0b84135"
 }

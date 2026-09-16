@@ -19,7 +19,16 @@ $$
 cal(C) = {phi : phi <= 0}, quad Pi_cal(C) (v) = min(v, 0)
 $$
 
-Measured phase ground truth is unavailable; the curves report intensity consistency.
+**Reported relative intensity error:**
+
+$$
+r_I = norm(hat(bold(y)) - bold(y))_2 / norm(bold(y) - bold(1))_2,
+quad hat(y)_j = cal(A)_(z_j)(x)
+$$
+
+$bold(y)$: measured intensities; $hat(bold(y))$: nonlinear Fresnel predictions.
+Norms use the **full field** and each method's measured distances, including on ROI slides.
+The denominator measures contrast around the flat field $1$; this is **not phase error**.
 
 <!--
 Source: multi-distance-phase-retrieval/phase_retrieval_comparison.py, rerun by
@@ -766,7 +775,7 @@ Same **four holograms**, full field and sphere ROI · one shared phase color sca
 | --- | --- | --- |
 | Model / prior | Linear CTF · scalar $alpha = 0.01$ | Full Fresnel · frequency Tikhonov + $phi <= 0$ |
 | Solve | Direct Fourier inverse | Constrained CTF start + 300 nonlinear steps |
-| Relative intensity residual ↓ | **0.559** | **0.128 — 4.35× lower** |
+| Relative intensity error $r_I$ ↓ | **0.559** | **0.128 — 4.35× lower** |
 
 **Takeaway:** the full nonlinear method fits these measured holograms substantially better.
 

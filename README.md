@@ -135,6 +135,10 @@ figure checksums, settings, histories, residuals, and ROI registration.
 `convergence-summary.json` contains the stopping checks and iteration counts.
 All displayed measurement residuals use the nonlinear intensity model, including
 the CTF panels, and are normalized by measured contrast `||I - 1||`.
+The figures label this relative intensity error as `r_I` and print
+`r_I = ||y_pred - y||_2 / ||y - 1||_2`. It uses all full-field pixels and each
+method's measured distances; ROI views repeat the full-field score. The
+homogeneous CTF/ICT pair includes absorption in its Fresnel prediction.
 
 The former extraction/detail commands now delegate to the same converged
 renderer. They no longer contain a second reconstruction implementation or
