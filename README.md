@@ -43,7 +43,9 @@ five stages has one equation slide followed by full result figures.
 The comparisons use measured beads at 2048 × 1920 pixels, with iterative methods
 run to explicit numerical convergence tolerances.
 Each phase comparison also has a tight, native-resolution ROI view, followed by
-a final recap of the complete NLTikh method.
+a recap of the complete NLTikh method. The final TL;DR compares regularized
+four-distance CTF with the full Huhn-style NLTikh implementation in DeepInv,
+using full fields and matching sphere ROIs on one shared phase scale.
 
 Two introductory slides in [pages/direct-methods-setup.md](./pages/direct-methods-setup.md)
 recall CTF/TIE/ICT direct inverses and show the experimental geometry in CeTZ.
@@ -82,15 +84,21 @@ reused and unfinished runs resume. Historical imports can be rendered and
 verified, but are never resumed with changed source. The direct CTF inversions
 need no iterative stopping test.
 
-To regenerate all 21 plots, including holograms, phase maps, tight ROIs,
-conditioning, frequency weights, and convergence curves:
+To regenerate the result comparisons and introductory figures, including
+holograms, phase maps, tight ROIs, conditioning, and convergence curves:
 
 ```bash
 multi-distance-phase-retrieval/.venv/bin/python scripts/render-converged-phase-retrieval.py
 multi-distance-phase-retrieval/.venv/bin/python scripts/render-tie-introduction.py
+multi-distance-phase-retrieval/.venv/bin/python scripts/render-method-summary.py
 ```
 
 The second command generates the seven TIE/CTF/ICT introduction figures.
+The third generates the final CTF/NLTikh comparison and its
+`method-summary-manifest.json`, recording checkpoint hashes, phase references,
+ROI, and full-data intensity residuals. Its shared phase range includes both
+methods' extrema; no offsets are aligned. The residuals (0.559 versus 0.128)
+measure hologram consistency, not phase accuracy against ground truth.
 Rendering needs no GPU and validates completeness and checkpoint provenance.
 The wrappers select the fresh cache when present, otherwise the imported
 presentation cache; `--cache` (or `--converged-cache` for the introduction)

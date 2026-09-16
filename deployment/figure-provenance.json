@@ -1,6 +1,6 @@
 {
   "scientific_repository": "https://github.com/gabs1234/multi-distance-phase-retrieval",
-  "renderer_and_verification_commit": "5ab389ceae2e73c315fa469b00d792fabe359038",
+  "renderer_and_verification_commit": "4af7b80114e3be9fed90a60adab96014e5ce899d",
   "note": "The commit contains the shared scientific implementations and renderers. The imported numerical runs retain their original source hashes in the figure manifests; they are not relabeled as newly computed runs.",
   "numerical_data_included": false,
   "figure_directory": "public/phase-retrieval",
@@ -33,6 +33,7 @@
     "05-nltikh-filter.png": "7b90d78623f777267e6d2dd21c71d71f0dccdd5c88a9283d9257a9b89ca6bf6b",
     "05-nltikh-phase.png": "95dd869d0660495a947eb290de049a149091f6587094700dc2b04cf50b08176f",
     "05-nltikh-roi.png": "4e10c4de524f588745eb7c5e687211044e610cd503cc1da743a00e23ba5408e5",
+    "06-ctf-vs-nltikh-summary.png": "80e899ee1f788ed8d3d7ddf627434153cc3089aa3dc1b7200f5bd8290bacd298",
     "convergence-summary.json": "7f62be7dbfa6c8224fbb3784329810597235fff6bafdef8d0f906bb005e86956",
     "details-manifest.json": "720f772c016655e2dac18c6577ba63d2dc05346ae39b43b2d14443d4a3ce38b3",
     "direct-ctf.svg": "48608eae3aa8daadc2a7cd0dcd53b6ee7894d72a82f200c2dc188bb1715a62a7",
@@ -40,6 +41,7 @@
     "direct-methods-manifest.json": "9a6199da110333c0b8b6499a0c7bb904e49296c73b7fe069033f43769016845e",
     "direct-tie.svg": "88135e3b44cf4666a8b743cfd8aff8e90caa87880631283e144cd129218e52c9",
     "manifest.json": "720f772c016655e2dac18c6577ba63d2dc05346ae39b43b2d14443d4a3ce38b3",
+    "method-summary-manifest.json": "3c1afa7da4960be066668ce5c09f37c58503b33a651673bbf66d7ead8747f584",
     "multi-distance-setup.svg": "dd12b2425d8ac73e1064e16ca71d488da838cdffaba2b5c4f7c2568f181da533",
     "tie-introduction-manifest.json": "f64f77e48bd15527f847db77eefe82166b4d8b9a94ebed88ad5ff3b377c87bf6"
   }

@@ -750,3 +750,50 @@ The 100-step objective change divided by E(0) is 6.44e-5 (tolerance 1e-4).
 Final relative intensity residual is 0.12845. Spatial resolution is 2048 × 1920.
 The ROI changes only the displayed region; every solver ran on the full field.
 -->
+
+---
+level: 2
+class: text-sm
+---
+
+# TL;DR · CTF vs nonlinear retrieval
+
+Same **four holograms**, full field and sphere ROI · one shared phase color scale.
+
+<img src="/phase-retrieval/06-ctf-vs-nltikh-summary.png" alt="Regularized four-distance CTF and the full Huhn-style nonlinear Tikhonov reconstruction, each shown as a full field and the same tight sphere ROI. All four views use the same phase scale, from minus 5 to plus 4 radians." class="w-full h-76 object-contain" />
+
+| | Regularized multi-distance CTF | Huhn-style NLTikh with DeepInv |
+| --- | --- | --- |
+| Model / prior | Linear CTF · scalar $alpha = 0.01$ | Full Fresnel · frequency Tikhonov + $phi <= 0$ |
+| Solve | Direct Fourier inverse | Constrained CTF start + 300 nonlinear steps |
+| Relative intensity residual ↓ | **0.559** | **0.128 — 4.35× lower** |
+
+**Takeaway:** the full nonlinear method fits these measured holograms substantially better.
+
+<div class="text-xs leading-snug mt-2">
+CTF has zero mean; NLTikh enforces nonpositive phase. No phase offsets were aligned.<br>
+This compares complete methods with different priors. There is no measured phase ground truth.
+</div>
+
+<!--
+This is the best of the four direct CTF baselines shown, not a search over
+regularization strengths: ctf_multi_tikh, four distances, scalar alpha=0.01.
+Its nonlinear full-data intensity residual is 0.5587598085403442.
+The comparison is the notebook's full Huhn-style NLTikh implementation in
+DeepInv, not the authors' reconstructed image or their original code.
+NLTikh uses frequency-dependent Tikhonov weights (1e-3, 1e-1, 8), phi<=0,
+a constrained CTF start (350 ADMM iterations), and BB steps with nonmonotone
+backtracking. Its 300 nonlinear steps reach the stated convergence criteria.
+Its full-data residual is 0.12844941020011902; the ratio is about 4.35.
+Both residuals use all four measured planes and the same nonlinear pure-phase
+Fresnel model, normalized by ||I-1||. These are intensity consistency measures.
+NLTikh is the complete paper-inspired method, not the lowest residual in every
+ablation: unregularized warm-started PGD gives 0.12828 on this dataset.
+The images use the original phase values and a shared -5 to +4 rad scale,
+including positive CTF values. Gauge/prior differences affect absolute colors;
+do not interpret brightness or the residual reduction as phase error against truth.
+ROI: zero-based top=583, left=870, size=192 (37.632 micrometres square),
+approximately matched to Huhn et al., Figure 1. Cropping follows reconstruction.
+Source: Huhn et al. (2022), https://doi.org/10.1364/OE.462368.
+Regenerate with the scientific repository's scripts/render-method-summary.py.
+-->

@@ -1,0 +1,48 @@
+{
+  "file": "06-ctf-vs-nltikh-summary.png",
+  "sha256": "80e899ee1f788ed8d3d7ddf627434153cc3089aa3dc1b7200f5bd8290bacd298",
+  "renderer_sha256": "b007c0e8355fc551e198557ae9824455c534ad33010f4b5362cf8f8cb254daec",
+  "source_hashes": {
+    "multi-distance-phase-retrieval/holograms_beads_updated.npz": "9c12fc258555a72fa1935962ba462d4891481a2c3ad69e802eea265f50f1cf34",
+    "multi-distance-phase-retrieval/phase_retrieval_comparison.py": "97701acfd99f0406de9559036a6828f74c86f31c0d21b8d7b6c6ea2d4b6a7ffe",
+    "multi-distance-phase-retrieval/src/multi_distance_phase_retrival_huhn/phase_retrieval.py": "c468c9f4a030f54d45b57c3e7bedacefc8ce26c2201617c93da83c358bc73d9c"
+  },
+  "checkpoint_sha256": {
+    "ctf_multi_tikh": "21b249400fce7acebdddde7aadc1b9e39dbb54fce58643c9279a5ce9d66424d9",
+    "nltikh": "66d7ee74d8f95c3141d8072a0e59aebb23f67219956c1f6a3e79992b35ba0cfe"
+  },
+  "methods": [
+    "ctf_multi_tikh",
+    "nltikh"
+  ],
+  "planes": 4,
+  "phase_scale": {
+    "colormap": "magma",
+    "limits_rad": [
+      -5.0,
+      4.0
+    ],
+    "policy": "Shared full-field range; no clipping or offset adjustment"
+  },
+  "phase_reference": {
+    "ctf_multi_tikh": "zero mean (unobservable DC set to zero)",
+    "nltikh": "stored nonpositive constrained phase"
+  },
+  "roi": {
+    "top": 583,
+    "left": 870,
+    "size": 192,
+    "indexing": "zero-based, end-exclusive",
+    "width_um": 37.632000000000005
+  },
+  "relative_intensity_residual": {
+    "ctf_multi_tikh": 0.5587598085403442,
+    "nltikh": 0.12844941020011902
+  },
+  "residual_ratio_ctf_over_nltikh": 4.350037946221932,
+  "residual_definition": "|| |P exp(i phi)|^2 - I ||_2 / ||I - 1||_2, same four planes",
+  "phase_ground_truth": null,
+  "nltikh_iterations": 300,
+  "ctf_initialization_iterations": 350,
+  "comparison_scope": "Best of the four direct CTF baselines shown versus the full Huhn-style method. Model, priors, and optimization all change. Not a claim of optimal hyperparameters or minimum phase error."
+}
