@@ -43,7 +43,8 @@
 
   line((detector-x, 0.9), (detector-x, 4.8),
     stroke: (paint: ink, thickness: 2pt), name: "detector")
-  content("detector.end", [Fixed detector], anchor: "south", padding: 0.16cm)
+  content("detector.end", align(center)[Fixed detector\ 6.5 μm pixels],
+    anchor: "south", padding: 0.16cm)
   content((15.3, 3.65), [Record $y_j$ at each position], anchor: "south")
 
   // One acquisition's two physical path lengths, j=1 highlighted above.
@@ -53,5 +54,5 @@
   line((sample-xs.first(), 0.03), (detector-x, 0.03), stroke: quiet,
     mark: (start: "|", end: "|", scale: 0.65))
   content(((sample-xs.first() + detector-x) / 2, -0.1), [$R_(2,j)$], anchor: "north")
-  content((15.3, 5.42), [Source–detector: 5.178 m], anchor: "south")
+  content((14.7, 5.42), [Source–detector: 5.178 m], anchor: "south")
 })
